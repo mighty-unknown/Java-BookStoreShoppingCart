@@ -97,7 +97,12 @@ public class CartController extends HttpServlet {
   }
 
   private void updateCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-	  
+	  ShoppingCart shoppingCart = (ShoppingCart) request.getSession().getAttribute("cart");
+	  if(shoppingCart != null) {
+		  int index = Integer.parseInt(request.getParameter("index"));
+		  int quantity = Integer.parseInt(request.getParameter("quantity"));
+		  shoppingCart.updateCartItem(index, quantity);
+	  }
   }
   
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
