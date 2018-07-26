@@ -47,7 +47,10 @@ public class CartController extends HttpServlet {
 					 break;
 				case "/delete":
 					deleteFromCart(request, response);
-					break;           
+					break;  
+				case "/update":
+					updateCart(request, response);
+					break;
 				default:
 					break;
 			}
@@ -93,6 +96,10 @@ public class CartController extends HttpServlet {
 	   }
   }
 
+  private void updateCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	  
+  }
+  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
